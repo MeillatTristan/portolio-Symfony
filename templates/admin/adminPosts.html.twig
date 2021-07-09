@@ -1,0 +1,47 @@
+{% extends 'templateAdmin.html.twig' %}
+
+{% block title %}Admin Page | MEILLAT Tristan{% endblock %}
+
+{% block script %}
+<script src="public/assets/js/popup.js"></script>
+{% endblock %}
+
+{% block body %}
+
+<div class="containerTablePosts">
+  <h2>Gestion des Articles</h2>
+  <a href="adminPostForm">Ajouter un article</a>
+  <div class="containerTable">
+    <div class="containerHeaderTable">
+      <p class="title">Titre</p>
+      <p class="author">Auteur</p>
+      <p class="lastModif">Dernière modification</p>
+      <p class="dateCreate">Date Création</p>
+      <p class="modif">Modifier</p>
+      <p class="delete">Supprimer</p>
+    </div>
+    <div class="containerPosts">
+      {% for post in posts %}
+        <div class="post">
+          <p class="title">{{post.title}}</p>
+          <p class="author">{{post.author}}</p>
+          <p class="lastModif">{{post.lastModif}}</p>
+          <p class="dateCreate">{{post.dateCreate}}</p>
+          <p class="modif"><a href="/portfolio/adminPostFormModif/{{post.id}}">Modifier</a></p>
+          <p class="delete"><a onclick="popup({{ post.id }})">Supprimer</a></p>
+          <div class="popup" id="popup-{{ post.id }}">
+            <div class="containerContent">
+              <p>Êtes vous sur de vouloir supprimer cet article ?</p>
+              <div class="button">
+                <a class="return" onclick="popup({{ post.id }})">Annuler</a>
+                <a class="delete" href="/portfolio/adminPostDelete/{{post.id}}">Supprimer</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

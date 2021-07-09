@@ -1,0 +1,92 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}Accueil | MEILLAT Tristan{% endblock %}
+
+{% block body %}
+
+<div class="containerHeaderHome" id="containerHeaderHome">
+  <div class="backgroundHeader" id="backgroundHeader"></div>
+  <div class="containerTitle">
+    <h3>Hello !</h3>
+    <h1>Je suis Tristan MEILLAT</h1>
+    <h2>Développeur web Symfony</h2>
+    <ul class="socialList">
+      <li class="firstChild"><a href="https://www.linkedin.com/in/tristan-meillat-3b6845194/"><i class="fab fa-linkedin-in"></i></a></li>
+      <li class="secondChild"><a href="https://github.com/MeillatTristan"><i class="fab fa-github"></i></a></li>
+    </ul>
+  </div>
+  <div class="containerPictureProfil">
+    <img src="/assets/images/pictureProfilModified.png" alt="">
+  </div>
+</div>
+<div class="containerDescription">
+    <div class="about">
+      <p class="cursive blue first"> &lt;body&gt;</p>
+      <div class="title">
+        <p class="cursive pink">&lt;h1&gt;</p>
+        <h2>A propos de moi</h2>
+        <p class="cursive pink">&lt;/h1&gt;</p>
+      </div>
+      <div class="containerContent">
+        <p>Je suis actuellement en formation Symfony chez OpenclassRooms afin d'en apprendre plus sur ma passion. J'aime expérimenté, découvrir de nouvelles technologies ainsi que de nouveaux horizons.</p>
+        <p>J'aime organisé mon travail, je suis ambitieux et j'aime tout donner pour atteindre mes objectifs. Je suis également passionné par la tech en général et par la NBA.</p>
+      </div>
+      <div class="cv">
+        <div class="title">
+          <p class="cursive green">&lt;a&gt;</p>
+          <div class="containerFile">
+            <a href="/assets/cv/CV_MEILLAT_Tristan.pdf" download>Mon CV</a>
+          </div>
+          <p class="cursive green">&lt;/a&gt;</p>
+        </div>
+      </div>
+      <p class="cursive blue second"> &lt;body&gt;</p>
+    </div>
+    <div class="competence">
+      <h2>Mes compétences</h2>
+      <div class="iconCompetence">
+        <div class="containerImg">
+          <img src="/assets/images/logo/html.png" alt="">
+        </div>
+        <div class="containerImg">
+          <img src="/assets/images/logo/css.png" alt="">
+        </div>
+        <div class="containerImg">
+          <img src="/assets/images/logo/php.png" alt="">
+        </div>
+        <div class="containerImg">
+          <img src="/assets/images/logo/sql.png" alt="">
+        </div>
+        <div class="containerImg">
+          <img src="/assets/images/logo/symfony.png" alt="">
+        </div>
+        <div class="containerImg">
+          <img src="/assets/images/logo/twig.png" alt="">
+        </div>
+        <div class="containerImg">
+          <img src="/assets/images/logo/wordpress.png" alt="">
+        </div>
+        <div class="containerImg">
+          <img src="/assets/images/logo/github.png" alt="">
+        </div>
+        <div class="containerImg">
+          <img src="/assets/images/logo/figma.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="containerForm">
+    <form method="post" action="/portfolio/contactForm">
+      <h2>Me contacter</h2>
+      <div class="containerName">
+        <input type="text" name="nom" placeholder="Nom" required>
+        <input type="text" name="prenom" placeholder="Prénom" required>
+      </div>
+      <input type="mail" name="email" placeholder="Email" required>
+      <input type="text" placeholder="Téléphone" name="phone" pattern="(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}" required>
+      <textarea name="message" id="message" placeholder="Votre message..." cols="30" rows="10" required ></textarea>
+      <input type="submit" placeholder="Envoyer">
+    </form>
+  </div>
+
+{% endblock %}
