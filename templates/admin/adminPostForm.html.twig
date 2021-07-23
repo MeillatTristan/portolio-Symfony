@@ -2,28 +2,25 @@
 
 {% block title %}Admin Page | MEILLAT Tristan{% endblock %}
 
+{% block script %}<script src="assets/js/thumbmail.js"></script>{% endblock %}
+
 {% block body %}
 
 <div class="containerBlock">
   <h2>Ajouter un Article</h2>
-  {% if successMessage is defined %}
-    <p class={{class}}>{{successMessage}}</p>
-  {% endif %}
-  <form action="/portfolio/postsRequest" method="post" enctype="multipart/form-data">
+  <form method="post" enctype="multipart/form-data">
+  {{ form_start(form) }}
     <div class="containerFirstBlock">
       <div class="containerInput">
-        <input type="text" name="title" placeholder="Titre de l'article" required>
-        <input type="text" name="chapo" placeholder="Chapo de l'article" required>
+        {{ form_widget(form.Title) }}
       </div>
       <div class="thumbmail">
-        <div id="containerPreview">
-        </div>
-        <input type="file" name="fileToUpload" id="uploadThumbmail" accept="image/*" required>
+        {{ form_widget(form.imageFile) }}
       </div>
     </div>
-    <textarea name="content" cols="30" rows="10" placeholder="Votre contenu... " required></textarea>
+    {{ form_widget(form.content) }}
     <input class ="validate" type="submit" value="Valider">
-  </form>
+  {{ form_end(form) }}
 </div>
 
 <script src="public/assets/js/thumbmail.js"></script>

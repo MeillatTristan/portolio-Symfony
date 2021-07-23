@@ -1,0 +1,17 @@
+{% extends 'template.html.twig' %}
+
+
+{% block title %} {{ post.title }} | MEILLAT Tristan {% endblock %}
+
+{% block body %}
+
+<div class="containerBlock">
+  <div class="containerPost">
+    <h1 class="title">{{ post.title }}</h1>
+    <p class="info">Par {{ post.author }}, dernière mise à jour le {{ post.updated_at|date('d-m-Y') }}</p>
+    <img src="/upload/posts/{{ post.imageName }}" alt="">
+    <p class="content">{{ post.content }}</p>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}Article | MEILLAT Tristan{% endblock %}
+
+
+{% block body %}
+
+<h1>Mes projets</h1>
+
+<div class="containerPosts">
+  {% for post in posts %}
+    <div class="postCard">
+      <img class="thumbnail" src="/upload/posts/{{ post.imageName }}" alt="">
+      <div class="containerText">
+        <h2 class="title">{{ post.title }}</h2>
+        <p class="info">{{ post.author}} | Dernière modification : {{ post.updated_at|date('d-m-Y') }}</p>
+        <p class="content">{{post.content| u.truncate(200, '...')}} </p>
+        <a href="posts/{{ post.id }}">Voir Plus</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
