@@ -1,3 +1,23 @@
+:root{
+  --background-color: #19191b;
+  --color-text: white;
+  --opacity-bg : 4%;
+  --icon-bg : #2c2c30;
+  --color-link : rgb(216, 215, 215);
+  --color-link-hover : white;
+  --color-bg-post : #202021;
+}
+
+[data-theme="light"]{
+  --background-color: #f7f6ef;
+  --color-text: #19191b;
+  --opacity-bg : 15%;
+  --icon-bg : #f1e9e9;
+  --color-link : rgb(46, 46, 46);
+  --color-link-hover : black;
+  --color-bg-post : #fffef1;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -6,10 +26,12 @@
   box-sizing: border-box;
 }
 
+
+
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #19191b;
-  color: white;
+  background-color: var(--background-color);
+  color: var(--color-text);
 }
 
 h2 {
@@ -67,7 +89,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: white;
+  color: var(--color-link);
   font-size: 17px;
   padding: 7px 13px;
   border-radius: 3px;
@@ -78,7 +100,7 @@ nav ul li a {
 a.active,
 a:hover {
   transition: 0.5s;
-  color: #19191b;
+  color: var(--background-color);
 }
 
 .firstLink:hover {
@@ -144,15 +166,64 @@ footer .cardFooter h4 {
 }
 
 footer .cardFooter a {
-  color: rgb(216, 215, 215);
+  color: var(--color-link);
   font-weight: 300;
   transition: 0.2s;
 }
 
 footer .cardFooter a:hover {
-  color: white;
+  color: var(--color-link-hover);
   text-decoration: underline;
   transition: 0.2s;
+}
+
+.switch {
+  display: inline-block;
+  width: 70px;
+  height: 35px;
+  color: white;
+  position: relative;
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #475569;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.toggle-thumb:before {
+  content: "";
+  height: 26px;
+  width: 26px;
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+  border-radius: 50%;
+  background-color: #E2E8F0;
+  transition: .4s all ease;
+}
+
+.checkbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkbox:checked + .toggle-thumb:before {
+  transform: translateX(36px);
+}
+
+.switch .far{
+  padding: 5px;
+  font-size: 20px;
 }
 
 .containerGlobal {
@@ -177,7 +248,7 @@ footer .cardFooter a:hover {
   width: 100%;
   z-index: -1;
   filter: grayscale(100%);
-  opacity: 4%;
+  opacity: var(--opacity-bg);
 }
 
 .containerHeaderHome .containerTitle h3 {
@@ -210,7 +281,7 @@ footer .cardFooter a:hover {
   height: 100px;
   border: 4px solid transparent;
   border-radius: 100px;
-  background: #2c2c30;
+  background: var(--icon-bg);
   background-clip: padding-box;
   display: flex;
   justify-content: center;
@@ -242,7 +313,7 @@ footer .cardFooter a:hover {
 }
 
 .containerHeaderHome .containerTitle .socialList li a {
-  color: white;
+  color: var(--color-text);
   font-size: 50px;
 }
 
@@ -343,7 +414,7 @@ footer .cardFooter a:hover {
   border-radius: 3px;
   background-color: transparent;
   padding: 10px 15px;
-  color: white;
+  color: var(--color-link);
   transition: 0.3s;
   font-size: 35px;
   font-weight: 700;
@@ -582,7 +653,7 @@ textarea {
 }
 
 .containerPosts .postCard:hover {
-  background-color: #202021;
+  background-color: var(--color-bg-post);
 }
 
 .containerPosts .postCard .title {
@@ -620,7 +691,7 @@ textarea {
 }
 
 .containerPosts .postCard .containerText a {
-  color: white;
+  color: var(--color-text);
   padding: 10px 20px 10px 20px;
   border: solid 2px #7a6697;
   background-color: transparent;
