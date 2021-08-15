@@ -62,4 +62,12 @@ class HomepageController extends AbstractController
             'post' => $post
         ]);
     }
+
+    /**
+     * @Route("/mentions-legales", name="mentionsLegales")
+     */
+    public function mentionsLegales(): Response
+    {
+        return $this->render('homepage/mentionsLegales.html.twig');
+    }
 }
